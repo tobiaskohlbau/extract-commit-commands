@@ -1,0 +1,18 @@
+name: 'Extract commit commands'
+description: 'Extract commands from commit messages'
+author: 'Tobias Kohlbau'
+inputs:
+  delimiter:
+    description: 'Delimiter for multiple commands'
+    default: ','
+    required: true
+  command:
+    description: 'Command key'
+    default: 'CI'
+    required: true
+outputs:
+  commands:
+    description: 'JSON array as string of all commands'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
